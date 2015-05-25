@@ -1,13 +1,14 @@
-var React = require('react');
+let React = require('react');
+let CodeBlock = require('../components/codeBlock');
 
-var Home = React.createClass({
-  render: function () {
+class Home extends React.Component{
+  render(){
     return (
       <div className="home">
-        <h1 ref="title">Hello world</h1>
+        <CodeBlock id="NQueens.java"></CodeBlock>
       </div>
     );
   }
-});
+}
 
 module.exports = Home;
