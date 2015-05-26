@@ -3,8 +3,6 @@ let Marty = require('marty');
 let CodeBlockStore = require('../stores/codeBlock');
 let hljs = require('highlight.js');
 let _ = require('lodash');
-//let Highlight = require('react-highlight');
-//let CodeMirror = React.createFactory(require('codemirror'));
 let i = '{}';
 
 class CodeBlock extends React.Component {
@@ -12,7 +10,7 @@ class CodeBlock extends React.Component {
     return (
       <pre>
         <code>
-            {this.props.file}
+          {this.props.file}
         </code>
       </pre>
     );
