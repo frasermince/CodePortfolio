@@ -3,16 +3,16 @@ let Marty = require('marty');
 let CodeBlockStore = require('../stores/codeBlock');
 let hljs = require('highlight.js');
 let _ = require('lodash');
-let i = '{}';
+let CodeLine = require('./codeLine');
 
 class CodeBlock extends React.Component {
   render() {
     return (
-      <pre>
-        <code>
-          {this.props.file}
-        </code>
-      </pre>
+      <table>
+        {_.map(this.props.file.lines, function(line){
+          return <CodeLine content={line}></CodeLine>;
+        })}
+      </table>
     );
   }
   componentDidMount(){
@@ -24,7 +24,7 @@ class CodeBlock extends React.Component {
   highlightCode() {
     if(!_.isEmpty(this.props.file)){
       let domNode = React.findDOMNode(this);
-      let nodes = domNode.querySelectorAll('pre code');
+      let nodes = domNode.querySelectorAll('table tr');
       if (nodes.length > 0) {
         for (let i = 0; i < nodes.length; i = i + 1) {
           hljs.highlightBlock(nodes[i]);
