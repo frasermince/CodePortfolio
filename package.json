@@ -12,7 +12,8 @@
     "react-bootstrap": "^0.22.6",
     "codemirror": "^5.3.0",
     "react-code-mirror": "^3.0.4",
-    "immutable": "^3.7.3"
+    "immutable": "^3.7.3",
+    "highlight.js": "^8.6.0"
   },
   "scripts": {
     "start": "grunt",
