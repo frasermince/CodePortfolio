@@ -5,7 +5,8 @@ class Home extends React.Component{
   render(){
     return (
       <div className="home">
-        <CodeBlock id="NQueens.java"></CodeBlock>
+      {console.log(this.props.path)}
+        <CodeBlock id={this.props.path}></CodeBlock>
       </div>
     );
   }
