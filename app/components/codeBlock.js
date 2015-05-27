@@ -5,10 +5,15 @@ let hljs = require('highlight.js');
 let _ = require('lodash');
 let CodeLine = require('./codeLine');
 
+let styles = {
+  tableLayout: 'fixed',
+  width: '100%'
+}
+
 class CodeBlock extends React.Component {
   render() {
     return (
-      <table>
+      <table style={styles}>
         {_.map(this.props.file.lines, function(line, index){
           return <CodeLine lineNumber={index + 1} content={line}></CodeLine>;
         })}
