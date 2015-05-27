@@ -9,8 +9,8 @@ class CodeBlock extends React.Component {
   render() {
     return (
       <table>
-        {_.map(this.props.file.lines, function(line){
-          return <CodeLine content={line}></CodeLine>;
+        {_.map(this.props.file.lines, function(line, index){
+          return <CodeLine lineNumber={index + 1} content={line}></CodeLine>;
         })}
       </table>
     );
