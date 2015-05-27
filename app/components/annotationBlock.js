@@ -3,8 +3,7 @@ let Affix = require('react-bootstrap/lib/Affix');
 
 let styles = {
   position: 'fixed',
-  top: 10,
-  backgroundColor: '#073642',
+  backgroundColor: '#002b36',
   color: '#93a1a1',
   width: 'inherit',
   height: '100%'
