@@ -5,10 +5,16 @@ let style = {
   height: 20,
   backgroundColor: '#eee8d5',
   paddingLeft: 10,
-  paddingRight: 6
+  paddingRight: 6,
+  WebkitTouchCallout: 'none',
+  WebkitUserSelect: 'none',
+  KhtmlUserSelect: 'none',
+  MozUserSelect: 'none',
+  msUserSelect: 'none',
+  userSelect: 'none'
 }
 
-class CodeLine extends React.Component{
+class LineNumber extends React.Component{
   render(){
     return(
       <td className='remove-highlight' style={style}>
@@ -18,4 +24,4 @@ class CodeLine extends React.Component{
   }
 }
 
-module.exports = CodeLine;
+module.exports = LineNumber;
