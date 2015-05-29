@@ -1,6 +1,6 @@
 let React = require('react');
 let Marty = require('marty');
-let CodeBlockStore = require('../stores/codeBlock');
+let CodeStore = require('../stores/codeStore');
 let hljs = require('highlight.js');
 let _ = require('lodash');
 let CodeLine = require('./codeLine');
@@ -40,10 +40,10 @@ class CodeBlock extends React.Component {
 }
 
 module.exports = Marty.createContainer(CodeBlock, {
-  listenTo: CodeBlockStore,
+  listenTo: 'codeStore',
   fetch: {
     file() {
-      return CodeBlockStore.for(this).getFile(this.props.id);
+      return this.app.codeStore.getFile(this.props.id);
     }
   },
   failed(errors) {

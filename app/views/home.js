@@ -6,7 +6,7 @@ let Col = require('react-bootstrap/lib/Col');
 let Row = require('react-bootstrap/lib/Row');
 
 let secondColumnStyles = {
-  paddingLeft: 10,
+  paddingLeft: 0,
   paddingRight: 0
 }
 

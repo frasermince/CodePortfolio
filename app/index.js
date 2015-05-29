@@ -1,13 +1,19 @@
-var React = require('react');
-var Marty = require('marty');
-var Router = require('./router');
+let React = require('react');
+let Marty = require('marty');
+let Router = require('./router');
+let Application = require('./Application');
+let ApplicationContainer = Marty.ApplicationContainer;
 
 window.React = React; // For React Developer Tools
 window.Marty = Marty; // For Marty Developer Tools
 
 if (process.env.NODE_ENV !== 'test') {
-  Marty.rehydrate();
+  let app = new Application();
+  app.rehydrate();
   Router.run((Handler, state) => {
-    React.render(<Handler {...state.params} />, document.getElementById('app'));
+    React.render(
+        <ApplicationContainer app={app}>
+          <Handler {...state.params} />
+        </ApplicationContainer>, document.getElementById('app'));
   });
 }

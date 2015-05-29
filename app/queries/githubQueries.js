@@ -1,21 +1,21 @@
-let Marty = require('marty');
+let Marty = require('marty')
+Marty.HttpStateSource.removeHook('parseJSON');
 let GithubConstants = require('../constants/githubConstants');
-let GithubApi = require('../sources/githubApi');
 
 class GithubQueries extends Marty.Queries{
   getFile(path){
     this.dispatch(GithubConstants.RECEIVE_FILE_STARTING, path);
-    return GithubApi.getFile(path).then(
-      res => {
-        if(res.status == 200){
-          this.dispatch(GithubConstants.RECEIVE_FILE, res.body, path);
+    return this.app.githubApi.getFile(path).then(
+      (res) => {
+        if(res.ok){
+          console.log('res', res);
+          //console.log('json', res.json());
+          this.dispatch(GithubConstants.RECEIVE_FILE, res.json(), path);
         }
         else{
           this.dispatch(GithubConstants.RECEIVE_FILE_FAILED, path)
         }
-      },
-      err => this.dispatch(GithubConstants.RECEIVE_FILE_FAILED, path, err)
-    );
+      }).catch((err) => this.dispatch(GithubConstants.RECEIVE_FILE_FAILED, path, err));
   }
 }
-export default Marty.register(GithubQueries);
+export default GithubQueries;

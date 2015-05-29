@@ -9,6 +9,4 @@ class GithubApi extends Marty.HttpStateSource {
   }
 }
 
-export default Marty.register(GithubApi);
-
-
+export default GithubApi;

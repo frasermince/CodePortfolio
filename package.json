@@ -3,17 +3,18 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "marty": "^0.9.0",
+    "marty": "^0.10.1",
+    "marty-express": "^0.10.0",
     "lodash": "3.5.0",
     "react": "^0.13.0",
     "babel": "^4.7.12",
-    "marty-express": "^0.2.0",
-    "react-router": "^0.13.0",
+    "react-router": "^0.13.3",
     "react-bootstrap": "^0.22.6",
     "codemirror": "^5.3.0",
     "react-code-mirror": "^3.0.4",
     "immutable": "^3.7.3",
-    "highlight.js": "^8.6.0"
+    "highlight.js": "^8.6.0",
+    "atob": "^1.1.2"
   },
   "scripts": {
     "start": "grunt",

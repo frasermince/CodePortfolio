@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '..', '..', 'dist')));
 
 app.use(require('marty-express')({
-  marty: require('marty'),
+  application: require('../application'),
   routes: require('../router/routes')
 }));
 
