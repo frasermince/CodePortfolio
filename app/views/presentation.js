@@ -1,6 +1,6 @@
 let React = require('react');
 let CodeBlock = require('../components/codeBlock');
-let AnnotationBlock = require('../components/annotationBlock');
+let SideBar = require('../components/sideBar');
 let Grid = require('react-bootstrap/lib/Grid');
 let Col = require('react-bootstrap/lib/Col');
 let Row = require('react-bootstrap/lib/Row');
@@ -10,13 +10,13 @@ let secondColumnStyles = {
   paddingRight: 0
 }
 
-class Home extends React.Component {
+class Presentation extends React.Component {
   render() {
     return (
       <Grid fluid={true}>
         <Row>
           <Col xs={3}>
-            <AnnotationBlock></AnnotationBlock>
+            <SideBar></SideBar>
           </Col>
           <Col style={secondColumnStyles} xs={9}>
             <CodeBlock id={this.props.path}></CodeBlock>
@@ -27,4 +27,4 @@ class Home extends React.Component {
   }
 }
 
-module.exports = Home;
+module.exports = Presentation;

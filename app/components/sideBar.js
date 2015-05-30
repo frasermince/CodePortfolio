@@ -9,7 +9,7 @@ let styles = {
   height: '100%'
 }
 
-class AnnotationBlock extends React.Component {
+class SideBar extends React.Component {
   render(){
     return (
       <div style={styles}>
@@ -19,4 +19,4 @@ class AnnotationBlock extends React.Component {
   }
 }
 
-module.exports = AnnotationBlock;
+module.exports = SideBar;
