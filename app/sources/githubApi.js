@@ -1,11 +1,17 @@
 let Marty = require('marty');
+Marty.HttpStateSource.removeHook('parseJSON');
 class GithubApi extends Marty.HttpStateSource {
   constructor(options) {
     super(options);
     this.baseUrl = 'https://api.github.com';
   }
   getFile(path) {
-    return this.get('/repos/frasermince/genetic/contents/' + path);
+    return this.get('/repos/frasermince/genetic/contents/' + path).then(res =>{
+      if (res.ok){
+        return res.json();
+      }
+      throw new Error('Failed to get user');
+    });
   }
 }
 

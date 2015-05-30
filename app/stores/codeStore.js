@@ -13,23 +13,11 @@ class CodeStore extends Marty.Store{
     };
   }
   setFile(file, path){
-    console.log('file', file);
-    console.log('path', path);
-    let content = '';
-    file.on('data', (chunk) => {
-      content += chunk;
-    });
-    //file.on('end', () => {
-      //file = JSON.parse(content);
-      //console.log(typeof(file.content));
-      //
-      let filetype = _.words(file.name, /[^.]+/g).pop();
-      let decrypted = atob(file.content);
-      let lines = _.words(decrypted, /[^\r\n]+/g);
-      console.log('words');
-      this.state[file.path] = {lines: lines, filetype: filetype};
-      this.hasChanged();
-    //});
+    let filetype = _.words(file.name, /[^.]+/g).pop();
+    let decrypted = atob(file.content);
+    let lines = _.words(decrypted, /[^\r\n]+/g);
+    this.state[path] = {lines: lines, filetype: filetype};
+    this.hasChanged();
   }
   getFile(path){
     return this.fetch({

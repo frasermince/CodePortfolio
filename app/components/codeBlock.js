@@ -40,7 +40,7 @@ class CodeBlock extends React.Component {
 }
 
 module.exports = Marty.createContainer(CodeBlock, {
-  listenTo: 'codeStore',
+  listenTo: ['codeStore'],
   fetch: {
     file() {
       return this.app.codeStore.getFile(this.props.id);
