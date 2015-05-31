@@ -43,7 +43,7 @@ module.exports = Marty.createContainer(CodeBlock, {
   listenTo: ['codeStore'],
   fetch: {
     file() {
-      return this.app.codeStore.getFile(this.props.id);
+      return this.app.codeStore.getFile(this.props.file);
     }
   },
   failed(errors) {

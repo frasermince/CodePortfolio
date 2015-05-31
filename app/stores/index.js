@@ -1,3 +1,4 @@
 module.exports = {
-  codeStore: require('./codeStore')
+  codeStore: require('./codeStore'),
+  presentationStore: require('./presentationStore')
 };

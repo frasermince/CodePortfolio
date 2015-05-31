@@ -13,7 +13,7 @@ class SideBar extends React.Component {
   render(){
     return (
       <div style={styles}>
-        <h1>HERE</h1>
+        <h1>{this.props.text}</h1>
       </div>
     )
   }
