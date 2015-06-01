@@ -22,9 +22,18 @@ class CodeBlock extends React.Component {
   }
   componentDidMount(){
     this.highlightCode();
+    this.scrollToHighlighted();
   }
   componentDidUpdate(){
     this.highlightCode();
+    this.scrollToHighlighted();
+  }
+  scrollToHighlighted(){
+    let domNode = React.findDOMNode(this);
+    let desiredElement = domNode.querySelector('.selected');
+    if(desiredElement != undefined) {
+      desiredElement.scrollIntoView();
+    }
   }
   highlightCode() {
     if(!_.isEmpty(this.props.file)){
