@@ -1,5 +1,6 @@
 let React = require('react');
-let Affix = require('react-bootstrap/lib/Affix');
+let Marty = require('marty');
+let Button = require('react-bootstrap/lib/Button');
 
 let styles = {
   position: 'fixed',
@@ -10,13 +11,18 @@ let styles = {
 }
 
 class SideBar extends React.Component {
-  render(){
+  render() {
     return (
       <div style={styles}>
         <h1>{this.props.text}</h1>
+        <Button onClick={this.handleClick.bind(this)}>Next</Button>
       </div>
-    )
+    );
+  }
+  handleClick(event) {
+    let newID = parseInt(this.props.path) + 1;
+    this.app.navigationActionCreators.navigateToAnnotation(newID);
   }
 }
 
-module.exports = SideBar;
+module.exports = Marty.createContainer(SideBar);

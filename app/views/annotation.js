@@ -19,7 +19,7 @@ class Annotation extends React.Component {
       <Grid fluid={true}>
         <Row>
           <Col xs={3}>
-            <SideBar text={currentAnnotation.text}></SideBar>
+            <SideBar path={this.props.path} text={currentAnnotation.text}></SideBar>
           </Col>
           <Col style={secondColumnStyles} xs={9}>
             <CodeBlock highlightedLine={currentAnnotation.line} file={currentAnnotation.file}></CodeBlock>

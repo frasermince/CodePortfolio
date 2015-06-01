@@ -1,10 +1,10 @@
-var Marty = require('marty');
-var Router = require('../router');
+let Marty = require('marty');
+let Router = require('../router');
 
 var NavigationActionCreators = Marty.createActionCreators({
   displayName: 'Navigation',
-  navigateHome() {
-    navigateTo('home');
+  navigateToAnnotation(id) {
+    navigateTo('annotations', {path: id});
   }
 });
 
