@@ -22,7 +22,7 @@ class Annotation extends React.Component {
             <SideBar text={currentAnnotation.text}></SideBar>
           </Col>
           <Col style={secondColumnStyles} xs={9}>
-            <CodeBlock line={currentAnnotation.line} file={currentAnnotation.file}></CodeBlock>
+            <CodeBlock highlightedLine={currentAnnotation.line} file={currentAnnotation.file}></CodeBlock>
           </Col>
         </Row>
       </Grid>
