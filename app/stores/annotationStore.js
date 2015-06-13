@@ -1,6 +1,6 @@
 let Marty = require('marty');
 
-class PresentationStore extends Marty.Store {
+class AnnotationStore extends Marty.Store {
   constructor(options) {
     super(options);
     this.state = [];
@@ -8,7 +8,7 @@ class PresentationStore extends Marty.Store {
 
     };
   }
-  getPresentation(id){
+  getAnnotation(id){
     return this.fetch({
       id: id,
       locally: function() {
@@ -21,4 +21,4 @@ class PresentationStore extends Marty.Store {
   }
 }
 
-module.exports = PresentationStore;
+module.exports = AnnotationStore;

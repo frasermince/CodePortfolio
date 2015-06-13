@@ -31,10 +31,10 @@ class Annotation extends React.Component {
 }
 
 module.exports = Marty.createContainer(Annotation, {
-  listenTo: 'presentationStore',
+  listenTo: 'annotationStore',
   fetch: {
     presentation() {
-      return this.app.presentationStore.getPresentation(1);
+      return this.app.annotationStore.getAnnotation(1);
     }
   },
   failed(errors) {
