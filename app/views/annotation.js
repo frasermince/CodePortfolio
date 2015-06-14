@@ -13,13 +13,13 @@ let secondColumnStyles = {
 
 class Annotation extends React.Component {
   render() {
-    let id = parseInt(this.props.path) - 1;
+    let id = parseInt(this.props.annotationId) - 1;
     let currentAnnotation = this.props.annotations[id];
     return (
       <Grid fluid={true}>
         <Row>
           <Col xs={3}>
-            <SideBar path={this.props.path} text={currentAnnotation.text}></SideBar>
+            <SideBar annotationId={this.props.annotationId} presentationId={this.props.presentationId} text={currentAnnotation.text}></SideBar>
           </Col>
           <Col style={secondColumnStyles} xs={9}>
             <CodeBlock highlightedLine={currentAnnotation.line} file={currentAnnotation.file}></CodeBlock>

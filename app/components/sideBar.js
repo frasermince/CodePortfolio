@@ -20,8 +20,8 @@ class SideBar extends React.Component {
     );
   }
   handleClick(event) {
-    let newID = parseInt(this.props.path) + 1;
-    this.app.navigationActionCreators.navigateToAnnotation(newID);
+    let newID = parseInt(this.props.annotationId) + 1;
+    this.app.navigationActionCreators.navigateToAnnotation(this.props.annotationId, newID);
   }
 }
 

@@ -3,5 +3,5 @@ let Route = require('react-router').Route;
 
 module.exports = [
   <Route name="presentations" path="presentations" handler={require('../views/presentation')} />,
-  <Route name="annotations" path="annotations/:path" handler={require('../views/annotation')} />
+  <Route name="annotations" path="annotations/:presentationId/:annotationId" handler={require('../views/annotation')} />
 ];

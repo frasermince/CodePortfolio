@@ -13,7 +13,7 @@ class Presentation extends React.Component {
         <ListGroup>
           {_.map(this.props.presentations, (presentation) => {
              return(
-                 <ListGroupItemLink to="annotations" params={{path: presentation.id}}>
+                 <ListGroupItemLink to="annotations" params={{presentationId: presentation.id, annotationId: 1}}>
                    {presentation.name}
                  </ListGroupItemLink>);
           })}

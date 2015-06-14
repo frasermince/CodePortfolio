@@ -3,8 +3,8 @@ let Router = require('../router');
 
 var NavigationActionCreators = Marty.createActionCreators({
   displayName: 'Navigation',
-  navigateToAnnotation(id) {
-    navigateTo('annotations', {path: id});
+  navigateToAnnotation(presentationId, annotationId) {
+    navigateTo('annotations', {presentationId: presentationId, annotationId: annotationId});
   }
 });
 
