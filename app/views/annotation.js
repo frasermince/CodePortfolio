@@ -14,7 +14,7 @@ let secondColumnStyles = {
 class Annotation extends React.Component {
   render() {
     let id = parseInt(this.props.path) - 1;
-    let currentAnnotation = this.props.presentation[id];
+    let currentAnnotation = this.props.annotations[id];
     return (
       <Grid fluid={true}>
         <Row>
@@ -33,16 +33,16 @@ class Annotation extends React.Component {
 module.exports = Marty.createContainer(Annotation, {
   listenTo: 'annotationStore',
   fetch: {
-    presentation() {
+    annotations() {
       return this.app.annotationStore.getAnnotation(1);
     }
   },
   failed(errors) {
-    return <div className="Presentation-Failed">{errors}</div>
+    return <div className="Annotation-Failed">{errors}</div>
   },
   pending() {
     return this.done({
-      presentation: {}
+      annotations: {}
     });
   }
 });
