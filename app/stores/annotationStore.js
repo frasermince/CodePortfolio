@@ -12,10 +12,10 @@ class AnnotationStore extends Marty.Store {
     return this.fetch({
       id: id,
       locally: function() {
-        return [{file: 'NQueens.java', line: 30, text: 'This is the text'}, {file: 'Knapsack.java', line: 20, text: 'This is more text'}];
+        return [{file: {githubProject: 'genetic', githubUserName: 'frasermince', githubPath: 'NQueens.java'}, line: 30, text: 'This is the text'}, {file: {githubProject: 'genetic', githubUserName: 'frasermince', githubPath: 'Knapsack.java'}, line: 20, text: 'This is more text'}];
       },
-      remotely: function(){
-        return [{file: 'NQueens.java', line: 30, text: 'This is the text'}, {file: 'Knapsack.java', line: 20, text: 'This is more text'}];
+      remotely: function() {
+        return [{file: {githubProject: 'genetic', githubUserName: 'frasermince', githubPath: 'NQueens.java'}, line: 30, text: 'This is the text'}, {file: {githubProject: 'genetic', githubUserName: 'frasermince', githubPath: 'Knapsack.java'}, line: 20, text: 'This is more text'}];
       }
     });
   }

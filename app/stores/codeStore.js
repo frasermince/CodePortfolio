@@ -19,14 +19,15 @@ class CodeStore extends Marty.Store{
     this.state[path] = {lines: lines, filetype: filetype};
     this.hasChanged();
   }
-  getFile(path){
+  getFile(username, project, path){
+    let key = '/repos/' + username + '/' + project + '/contents/' + path;
     return this.fetch({
-      id: path,
+      id: key,
       locally: function(){
-        return this.state[path];
+        return this.state[key];
       },
       remotely: function(){
-        return this.app.githubQueries.getFile(path);
+        return this.app.githubQueries.getFile(key);
       }
     });
   }

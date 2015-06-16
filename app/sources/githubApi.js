@@ -6,7 +6,7 @@ class GithubApi extends Marty.HttpStateSource {
     this.baseUrl = 'https://api.github.com';
   }
   getFile(path) {
-    return this.get('/repos/frasermince/genetic/contents/' + path).then(res =>{
+    return this.get(path).then(res =>{
       if (res.ok){
         return res.json();
       }

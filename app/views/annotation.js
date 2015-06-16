@@ -22,7 +22,7 @@ class Annotation extends React.Component {
             <SideBar annotationId={this.props.annotationId} presentationId={this.props.presentationId} text={currentAnnotation.text}></SideBar>
           </Col>
           <Col style={secondColumnStyles} xs={9}>
-            <CodeBlock highlightedLine={currentAnnotation.line} file={currentAnnotation.file}></CodeBlock>
+            <CodeBlock highlightedLine={currentAnnotation.line} path={currentAnnotation.file.githubPath} project={currentAnnotation.file.githubProject} username={currentAnnotation.file.githubUserName}></CodeBlock>
           </Col>
         </Row>
       </Grid>
