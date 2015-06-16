@@ -5,6 +5,9 @@ var NavigationActionCreators = Marty.createActionCreators({
   displayName: 'Navigation',
   navigateToAnnotation(presentationId, annotationId) {
     navigateTo('annotations', {presentationId: presentationId, annotationId: annotationId});
+  },
+  navigateToCreate(username, project, path) {
+   navigateTo('create', {username: username, project: project, path: path});
   }
 });
 
