@@ -15,7 +15,7 @@ class CodeBlock extends React.Component {
     return (
       <table style={styles}>
         {_.map(this.props.file.lines, (line, index) => {
-          return <CodeLine highlight={index + 1 == this.props.highlightedLine} lineNumber={index + 1} content={line}></CodeLine>;
+          return <CodeLine createMode={this.props.createMode} highlight={index + 1 == this.props.highlightedLine} lineNumber={index + 1} content={line}></CodeLine>;
         })}
       </table>
     );

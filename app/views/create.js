@@ -13,7 +13,7 @@ class Create extends React.Component {
           <FileSelector username={this.props.username} project={this.props.project} path={this.props.path}></FileSelector>
         </Col>
         <Col xs={9}>
-          <CodeBlock username={this.props.username} project={this.props.project} path={this.props.path}></CodeBlock>
+          <CodeBlock username={this.props.username} project={this.props.project} path={this.props.path} createMode={true}></CodeBlock>
         </Col>
       </Grid>
     );

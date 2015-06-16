@@ -22,6 +22,12 @@ let trStyles = {
   },
   highlight: {
     backgroundColor: '#eee8d5'
+  },
+  createMode: {
+    cursor: 'pointer',
+    ':hover': {
+      backgroundColor: '#eee8d5'
+    }
   }
 }
 
@@ -32,7 +38,8 @@ class CodeLine extends React.Component{
         className={this.props.highlight ? 'selected' : 'not-selected'}
         style={[
           trStyles.base,
-          this.props.highlight && trStyles.highlight
+          this.props.highlight && trStyles.highlight,
+          this.props.createMode && trStyles.createMode
         ]}>
         <LineNumber lineNumber={this.props.lineNumber}></LineNumber>
         <td className="code"
