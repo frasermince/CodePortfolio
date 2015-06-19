@@ -28,7 +28,7 @@ class CodeLine extends React.Component {
           this.props.highlight && trStyles.highlight
         ]}>
         <LineNumber lineNumber={this.props.lineNumber}></LineNumber>
-        <LineBody content={this.props.content} createMode={this.props.createMode}></LineBody>
+        <LineBody lineNumber={this.props.lineNumber} content={this.props.content} createMode={this.props.createMode}></LineBody>
       </tr>
     );
   }

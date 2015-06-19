@@ -1,6 +1,7 @@
 let React = require('react');
 let Radium = require('Radium');
 let Marty = require('marty');
+let CodeActionCreators = require('../actions/codeActionCreators');
 
 let styles = {
   cursor: 'pointer',
@@ -10,14 +11,17 @@ let styles = {
 }
 
 class Clickable extends React.Component {
+  handleClick(){
+    let lineNumber = this.props.lineNumber
+    this.app.codeActionCreators.clickLine(lineNumber);
+  }
   render(){
     return(
-      <div style={[styles]}>
+      <div onClick={this.handleClick.bind(this)} style={[styles]}>
         {this.props.children}
       </div>
     );
   }
 }
 
-module.exports = Radium.Enhancer(Clickable);
-//Marty.createContainer
+module.exports = Marty.createContainer(Radium.Enhancer(Clickable));

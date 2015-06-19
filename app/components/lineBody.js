@@ -16,7 +16,7 @@ class LineBody extends React.Component {
     return (
       <td className="code"
         style={styles.base}>
-        {this.props.createMode ? <Clickable>{this.props.content}</Clickable> : this.props.content}
+        {this.props.createMode ? <Clickable lineNumber={this.props.lineNumber}>{this.props.content}</Clickable> : this.props.content}
       </td>
     );
   }

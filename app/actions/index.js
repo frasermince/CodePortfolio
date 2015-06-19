@@ -1,3 +1,4 @@
 module.exports = {
-  navigationActionCreators: require('./navigationActionCreators')
+  navigationActionCreators: require('./navigationActionCreators'),
+  codeActionCreators: require('./codeActionCreators')
 }
