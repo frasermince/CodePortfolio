@@ -1,16 +1,9 @@
 let React = require('react');
 let Radium = require('Radium');
 let LineNumber = require('./lineNumber');
+let Clickable = require('./clickable');
+let LineBody = require('./lineBody');
 
-let tdStyles = {
-  base: {
-    paddingTop: 0,
-    paddingLeft: 5,
-    paddingBottom: 0,
-    wordWrap: 'break-word',
-    whiteSpace: 'pre-wrap'
-  },
-}
 
 let trStyles = {
   base: {
@@ -22,32 +15,20 @@ let trStyles = {
   },
   highlight: {
     backgroundColor: '#eee8d5'
-  },
-  createMode: {
-    cursor: 'pointer',
-    ':hover': {
-      backgroundColor: '#eee8d5'
-    }
   }
 }
 
-class CodeLine extends React.Component{
-  render(){
-    return(
+class CodeLine extends React.Component {
+  render() {
+    return (
       <tr
         className={this.props.highlight ? 'selected' : 'not-selected'}
         style={[
           trStyles.base,
-          this.props.highlight && trStyles.highlight,
-          this.props.createMode && trStyles.createMode
+          this.props.highlight && trStyles.highlight
         ]}>
         <LineNumber lineNumber={this.props.lineNumber}></LineNumber>
-        <td className="code"
-          style={[
-            tdStyles.base
-          ]}>
-          {this.props.content}
-        </td>
+        <LineBody content={this.props.content} createMode={this.props.createMode}></LineBody>
       </tr>
     );
   }
