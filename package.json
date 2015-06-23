@@ -40,15 +40,16 @@
     "grunt-nodemon": "^0.3.0",
     "grunt-karma": "0.9.0",
     "karma": "^0.12.28",
-    "karma-bro": "0.10.0",
     "karma-chrome-launcher": "^0.1.7",
-    "karma-spec-reporter": "0.0.13",
+    "karma-spec-reporter": "0.0.19",
     "karma-mocha": "^0.1.10",
     "mocha": "^2.0.1",
     "morgan": "~1.5.0",
     "babelify": "^5.0.4",
     "sinon": "^1.10.3",
     "sinon-chai": "^2.5.0",
-    "envify": "^3.2.0"
+    "envify": "^3.2.0",
+    "karma-browserify": "^4.2.1",
+    "chai-as-promised": "^5.1.0"
   }
 }
