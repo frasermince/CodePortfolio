@@ -50,6 +50,7 @@
     "sinon-chai": "^2.5.0",
     "envify": "^3.2.0",
     "karma-browserify": "^4.2.1",
-    "chai-as-promised": "^5.1.0"
+    "chai-as-promised": "^5.1.0",
+    "react-test-tree": "^0.2.0"
   }
 }
