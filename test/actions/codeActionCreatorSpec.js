@@ -1,5 +1,5 @@
 let expect = require('chai').expect;
-let Application = require('../../app/application.js');
+let Application = require('../../app/application');
 let CodeConstants = require('../../app/constants/codeConstants');
 let { hasDispatched, createApplication } = require('marty/test-utils');
 
