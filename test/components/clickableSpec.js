@@ -3,7 +3,7 @@ let sinon = require('sinon');
 let React = require('react');
 let { expect } = require('chai');
 let Application = require('../../app/application');
-let { createStore, createApplication } = require('marty/test-utils');
+let { createApplication } = require('marty/test-utils');
 let testTree = require('react-test-tree');
 
 describe('Clickable', () => {
@@ -21,7 +21,7 @@ describe('Clickable', () => {
     childContent = 'This is the content';
     element = testTree(<Clickable children={childContent}/>, {
       context: { app : app }
-    })
+    });
   });
 
   it('should have inner content', ()=> {
