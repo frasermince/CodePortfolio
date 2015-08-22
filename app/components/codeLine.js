@@ -22,6 +22,7 @@ class CodeLine extends React.Component {
   render() {
     return (
       <tr
+        refCollection="children"
         className={this.props.highlight ? 'selected' : 'not-selected'}
         style={[
           trStyles.base,
